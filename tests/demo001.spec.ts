@@ -14,10 +14,7 @@ test("Login preventing with wrong details", async ({ page }) => {
   await page.goto("https://katalon-demo-cura.herokuapp.com/");
   await page.locator("#menu-toggle").click();
   await page.getByRole("link", { name: "Home" }).click();
-  await page.getByRole("link", { name: "Make Appointment" }).click();
-  await page.locator("body").click();
-  await page.goto("https://katalon-demo-cura.herokuapp.com/");
-  await page.getByRole("link", { name: "Make Appointment" }).click();
+    await page.getByRole("link", { name: "Make Appointment" }).click();
   await page.getByRole("textbox", { name: "Username" }).first().click();
   await page.getByRole("textbox", { name: "Password" }).first().click();
   await page.getByLabel("Username").click();
