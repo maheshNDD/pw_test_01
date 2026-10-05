@@ -10,8 +10,8 @@ test("test", async ({ page }) => {
   await expect(page.locator("h2")).toContainText("Make Appointment");
 })
 
-test.only("Find the locator values", async ({ page }) => {
-  await page.goto("await page.goto('https://katalon-demo-cura.herokuapp.com/');");
+test("Find the locator values", async ({ page }) => {
+  await page.goto("https://katalon-demo-cura.herokuapp.com/");
   const makeAppointBtn = page.getByRole("link", {
     name: "Make Appointment",
   });
@@ -19,4 +19,3 @@ test.only("Find the locator values", async ({ page }) => {
   console.log(`Locator type: ${typeof makeAppointBtn}, Value of the locator: ${makeAppointBtn}`,
   );
 })
-

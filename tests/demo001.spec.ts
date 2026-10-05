@@ -20,7 +20,8 @@ test("Login preventing with wrong details", async ({ page }) => {
   await page.getByLabel("Username").click();
   await page.getByLabel("Username").fill("John Smith");
   await page.getByLabel("Password").fill("demo");
-  await expect(page.locator("#btn-login")).toContainText(
+  await page.getByRole("button", { name: "Login" }).click();
+  await expect(page.locator("#login")).toContainText(
     "Login failed! Please ensure the username and password are valid.",
   );
 });
