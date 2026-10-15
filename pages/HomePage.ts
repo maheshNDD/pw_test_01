@@ -4,7 +4,7 @@ export class HomePage {
   constructor(private readonly page: Page) {}
 
   async open(): Promise<void> {
-    await this.page.goto("https://katalon-demo-cura.herokuapp.com/");
+    await this.page.goto("/");
   }
 
   async startAppointment(): Promise<void> {

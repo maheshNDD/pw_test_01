@@ -1,14 +1,15 @@
 import { test, expect } from '@playwright/test';
+import { environment } from "../utils/env";
 
 test('test01', async ({ page }) => {
-  await page.goto('https://katalon-demo-cura.herokuapp.com/');
+  await page.goto('/');
   await page.getByRole('link', { name: 'Make Appointment' }).click();
   await page.getByRole('textbox', { name: 'Username' }).first().click();
   await page.getByRole('textbox', { name: 'Username' }).first().press('ControlOrMeta+c');
   await page.getByLabel('Username').click();
-  await page.getByLabel('Username').fill('John Doe');
+  await page.getByLabel('Username').fill(environment.username);
   await page.getByRole('textbox', { name: 'Password' }).first().press('ControlOrMeta+c');
-  await page.getByLabel('Password').fill('ThisIsNotAPassword');
+  await page.getByLabel('Password').fill(environment.password);
   await page.getByRole('button', { name: 'Login' }).click();
   await page.getByRole('checkbox', { name: 'Apply for hospital readmission' }).check();
   await page.getByRole('radio', { name: 'Medicaid' }).check();

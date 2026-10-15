@@ -1,8 +1,12 @@
 
 # Playwright
 node_modules/
+/.env
+/.github/.env
 /test-results/
 /playwright-report/
+/allure-results/
+/allure-report/
 /blob-report/
 /playwright/.cache/
 /playwright/.auth/

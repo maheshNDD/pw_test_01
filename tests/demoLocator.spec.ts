@@ -1,17 +1,18 @@
 import { test, expect } from "@playwright/test";
+import { environment } from "../utils/env";
 
 test("test", async ({ page }) => {
-  await page.goto("https://katalon-demo-cura.herokuapp.com/");
+  await page.goto("/");
   await page.getByRole("link", { name: "Make Appointment" }).click();
   await expect(page.getByText("Please login to make")).toBeVisible();
-  await page.getByLabel("Username").fill("John Doe");
-  await page.getByLabel("Password").fill("ThisIsNotAPassword");
+  await page.getByLabel("Username").fill(environment.username);
+  await page.getByLabel("Password").fill(environment.password);
   await page.getByRole("button", { name: "Login" }).click();
   await expect(page.locator("h2")).toContainText("Make Appointment");
 })
 
 test("Find the locator values", async ({ page }) => {
-  await page.goto("https://katalon-demo-cura.herokuapp.com/");
+  await page.goto("/");
   const makeAppointBtn = page.getByRole("link", {
     name: "Make Appointment",
   });

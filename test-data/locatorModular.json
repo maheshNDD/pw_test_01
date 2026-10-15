@@ -1,0 +1,16 @@
+[
+  {
+    "name": "Book an appointment with valid credentials",
+    "appointment": {
+      "readmission": true,
+      "visitDateDay": "14",
+      "comment": "test"
+    },
+    "expected": {
+      "readmission": "Yes",
+      "insurance": "Medicare",
+      "visitDate": "14/10/2026",
+      "comment": "test"
+    }
+  }
+]

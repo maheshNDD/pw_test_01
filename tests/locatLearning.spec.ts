@@ -1,9 +1,11 @@
 import { test, expect } from "@playwright/test";
+import { environment } from "../utils/env";
+
 test("test1", async ({ page }) => {
-  await page.goto('https://katalon-demo-cura.herokuapp.com/');
+  await page.goto('/');
   await page.getByRole('link', { name: 'Make Appointment' }).click();
-  await page.getByLabel('Username').fill('John Doe');
-  await page.getByLabel('Password').fill('ThisIsNotAPassword');
+  await page.getByLabel('Username').fill(environment.username);
+  await page.getByLabel('Password').fill(environment.password);
   await page.getByRole('button', { name: 'Login' }).click();
   await page.getByRole('checkbox', { name: 'Apply for hospital readmission' }).check();
    await page.getByRole('textbox', { name: 'Visit Date (Required)' }).click();
@@ -19,5 +21,3 @@ test("test1", async ({ page }) => {
   await expect(page.locator('#comment')).toContainText('test');
    
 });
-
-

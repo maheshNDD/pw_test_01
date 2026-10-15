@@ -4,9 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-     "login": "npx playwright test tests/demoSuite.spec.ts --headed",
-      "demo": "npx playwright test tests/demoSuite.spec.ts --headed"
-
+    "login": "npx playwright test tests/demoSuite.spec.ts --headed",
+    "demo": "npx playwright test tests/demoSuite.spec.ts --headed",
+    "allure:generate": "allure generate allure-results --clean --output allure-report",
+    "allure:open": "allure open allure-report"
   },
   "keywords": [],
   "author": "",
@@ -14,6 +15,11 @@
   "type": "commonjs",
   "devDependencies": {
     "@playwright/test": "^1.63.0",
-    "@types/node": "^26.6.3"
+    "@types/node": "^26.6.3",
+    "allure-commandline": "^2.46.1",
+    "allure-playwright": "^3.13.0"
+  },
+  "dependencies": {
+    "dotenv": "^18.0.8"
   }
 }

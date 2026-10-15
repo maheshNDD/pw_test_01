@@ -13,19 +13,19 @@ export class ConfirmationPage {
     );
   }
 
-  get readmissionValue(): Locator {
-    return this.page.getByText("Yes");
+  readmissionValue(value: string): Locator {
+    return this.page.getByText(value);
   }
 
-  get insuranceValue(): Locator {
-    return this.page.getByText("Medicare");
+  insuranceValue(value: string): Locator {
+    return this.page.getByText(value);
   }
 
-  get visitDate(): Locator {
-    return this.page.getByText("14/10/2026");
+  visitDate(value: string): Locator {
+    return this.page.getByText(value);
   }
 
-  get comment(): Locator {
-    return this.page.getByText("test");
+  comment(value: string): Locator {
+    return this.page.getByText(value);
   }
 }
